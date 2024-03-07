@@ -1,13 +1,21 @@
+
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity()
-export class ProductDimensionDetail {
+export class ProductFrameType {
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    quantity: number;
+    name: string;
 
-    
+    @CreateDateColumn()
+    createdAt: Date
+
+    @UpdateDateColumn()
+    updatedAt: Date
+
+    @DeleteDateColumn()
+    deletedAt: Date
 }
