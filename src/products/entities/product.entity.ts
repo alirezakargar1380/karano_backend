@@ -5,7 +5,7 @@ import {
     CreateDateColumn, UpdateDateColumn, DeleteDateColumn,
     OneToOne, OneToMany, JoinColumn, ManyToOne
 } from 'typeorm';
-import { ProductOrderType, ProductType } from '../interface/enum';
+import { ProductCategory, ProductOrderType } from '../interface/enum';
 
 @Entity()
 export class Products {
@@ -16,8 +16,13 @@ export class Products {
     @Column()
     name: string;
 
+    @Column({
+        default: 0
+    })
+    quantity: number;
+
     @Column()
-    quantity: string;
+    price: number;
 
     @Column({
         type: 'enum',
@@ -28,11 +33,11 @@ export class Products {
 
     @Column({
         type: 'enum',
-        enum: ProductType,
+        enum: ProductCategory,
         nullable: true,
         default: null
     })
-    type: ProductType; // 0 means product with deminition, 1 means customizable product
+    type: ProductCategory; // 0 means product with deminition, 1 means customizable product
 
     @Column({
         type: 'varchar',

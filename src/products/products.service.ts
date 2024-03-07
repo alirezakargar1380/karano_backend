@@ -25,7 +25,10 @@ export class ProductsService {
 
   findAll() {
     return this.repository.find({
-      relations: {}
+      relations: {},
+      order: {
+        id: 'DESC'
+      }
     });
   }
 
