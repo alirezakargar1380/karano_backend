@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { ProductFrameTypeModule } from './product_frame_type/product_frame_type.module';
 import { ProductDetailsModule } from './product_details/product_details.module';
 import { ProductProfileTypeModule } from './product_profile_type/product_profile_type.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ProductProfileTypeModule } from './product_profile_type/product_profile
       autoLoadEntities: true,
       synchronize: true
     }),
+    CategoryModule,
     ProductsModule,
     UsersModule,
     ProductsCoverTypesModule,
